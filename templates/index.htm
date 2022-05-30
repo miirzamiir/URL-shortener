@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>URL shortner</title>
+</head>
+
+<body>
+
+    <div id="title">
+        <p>URL Shortner</p>
+    </div>
+    <div id="main">
+        <form method="POST" id="mainform" action="{% url 'index'%}">
+            {% csrf_token %}
+            <input type="text" placeholder="Enter the URL here." name="link">
+            <button type="submit">submit</button>
+        </form>
+        {% if url %}
+        <p> shortened url: {{ url }}</a>
+        </p>
+        {% else %}
+        <p> shortened url:
+            <a href="#"></a>
+        </p>
+        {% endif %}
+    </div>
+
+    <div id="footer">
+        created by <a href="www.github.com/miirzamiir">miirzamiir</a>
+    </div>
+</body>
+
+</html>
