@@ -11,7 +11,7 @@ class index(View):
     def post(self, request):
         url = request.POST.get("link")
         link = Link.objects.create(url=url)
-        url = 'localhost:8000/'+str(link.uuid)[-5:]
+        url = request.build_absolute_uri() + str(link.uuid)[-5:]
         return render(
             request, 'index.htm', context={'url': url}
         )
