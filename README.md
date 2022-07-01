@@ -14,10 +14,12 @@ Run Project
 ---
 After cloning project, you can simply run this project by following instructions bellow.
 
-### 1- install docker and docker-compose.
+### 1- environment variables.
+create a `.env` file and set value for `SECRET_KEY`, `POSTGRES_NAME`, `POSTGRES_USER` and `POSTGRES_PASSWORD` keys.
+### 2- install docker and docker-compose.
 you can install docker from [here](https://docs.docker.com/engine/install/).
 
-### 2- docker commands.
+### 3- docker commands.
 open a terminal and run command bellow.
 ```
 docker-compose up
