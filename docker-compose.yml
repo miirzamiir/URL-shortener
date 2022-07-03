@@ -11,7 +11,7 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sh ./entrypoint.sh
     volumes:
       - .:/app
     ports:
@@ -22,3 +22,15 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     depends_on:
       - db
+  
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./static:/static
+    ports:
+      - "81:80"
+    depends_on:
+      - web
+
+volumes:
+  static:
