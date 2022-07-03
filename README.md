@@ -8,6 +8,7 @@ Tools
   - python
   - django
   - docker
+  - nginx
   - html/css
   
 Run Project
@@ -24,4 +25,4 @@ open a terminal and run command bellow.
 ```
 docker-compose up
 ```
-this command will run project on `localhost:8000` and you will be able to visit that by your favorite browser.
+this command will run project on `localhost:80` and you will be able to visit that by your favorite browser.
